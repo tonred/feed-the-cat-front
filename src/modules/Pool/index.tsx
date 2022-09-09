@@ -55,7 +55,6 @@ export default function Pool(): JSX.Element {
         if (poolStore.id === undefined) return
         const nftsData: RewardNft[] = rewardsNft[poolStore.id]
         return poolStore.nfts?.map((nft, index) => {
-            console.log(nft)
             const nftData = nftsData[index];
             return <NftCard
                 key={index}

@@ -6,6 +6,8 @@ export default {
     WALLET_CONNECTING: 'Connecting...',
     WALLET_CONNECT_MSG: 'To continue, you need to connect the wallet',
     WALLET_DISCONNECT_BTN_TEXT: 'Відключити',
+    EVM_WALLET_WRONG_NETWORK_BTN_TEXT: 'Wrong Network',
+
 
     HOME_PAGE_TITLE: "Платформа для створення безпечних зборів коштів для допомоги Україні",
     HOME_PAGE_ACTIVE_POOL_LIST_TITLE: "Активні збори",
@@ -31,7 +33,7 @@ export default {
     SPENDER_TITLE: 'Отримувач: ',
     OPEN_IN_ETHERSCAN: 'Відкрити на Etherscan',
 
-    NFT_CARD_REWARD_AMOUNT_TEXT: 'Donate {value} {currency} to get this NFT',
-    NFT_CARD_REWARD_COUNT_TEXT: 'Donate {value} times to get this NFT'
+    NFT_CARD_REWARD_AMOUNT_TEXT: 'Задонадьте {value} {currency} щоб отримати це NFT',
+    NFT_CARD_REWARD_COUNT_TEXT: 'Задонадьте {value} раз(и)  щоб отримати це NFT'
 
 }

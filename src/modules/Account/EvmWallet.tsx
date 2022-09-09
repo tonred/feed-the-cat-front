@@ -1,20 +1,38 @@
 import * as React from 'react'
-import {Observer} from 'mobx-react-lite'
+import {observer, Observer} from 'mobx-react-lite'
 import {useIntl} from 'react-intl'
 import {Box, Button} from "grommet";
-import {Logout} from 'grommet-icons'
 
 import {useEvmWallet} from '@/stores/EvmWalletService'
 import {findNetwork, formattedTokenAmount, sliceAddress} from '@/utils'
+import {WrongNetworkError} from "@/modules/Account/WrongNetwork";
+import {NETWORK_ID} from "@/config";
 
-export function EvmWallet(): JSX.Element | null {
+function EvmWalletA(): JSX.Element | null {
     const intl = useIntl()
     const wallet = useEvmWallet()
+    const network = findNetwork(NETWORK_ID, 'evm')!
+    const wrongNetwork = (
+        wallet.isReady
+        && network !== undefined
+        && network.chainId !== wallet.chainId
+    )
+    if (wrongNetwork) {
+        return (
+            <Observer>
+                {() => {
+                    return (
+                        <WrongNetworkError
+                            network={network}
+                            wallet={wallet}/>
+                    )
+                }}
+            </Observer>)
+    }
 
     return (
         <Observer>
             {() => {
-                const network = findNetwork(wallet.chainId, 'evm')
                 return (
                     <>
                         {!wallet.isConnected ? (
@@ -29,6 +47,7 @@ export function EvmWallet(): JSX.Element | null {
                         ) : (
                             <Box direction={"row"}>
                                 {wallet.balance !== undefined ? (
+
                                     <Button
                                         primary
                                         tip={intl.formatMessage({
@@ -63,3 +82,5 @@ export function EvmWallet(): JSX.Element | null {
         </Observer>
     )
 }
+
+export const EvmWallet = observer(EvmWalletA)

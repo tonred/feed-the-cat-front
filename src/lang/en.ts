@@ -6,11 +6,12 @@ export default {
     WALLET_CONNECTING: 'Connecting...',
     WALLET_CONNECT_MSG: 'To continue, you need to connect the wallet',
     WALLET_DISCONNECT_BTN_TEXT: 'Disconnect',
+    EVM_WALLET_WRONG_NETWORK_BTN_TEXT: 'Wrong Network',
 
     HOME_PAGE_TITLE: "Platform for creating safe funding to help Ukraine",
-    HOME_PAGE_ACTIVE_POOL_LIST_TITLE: "Active pools",
-    HOME_PAGE_FINISHED_POOL_LIST_TITLE: "Finished pools",
-    HOME_PAGE_PENDING_POOL_LIST_TITLE: "Not activated pools",
+    HOME_PAGE_ACTIVE_POOL_LIST_TITLE: "Active fundings",
+    HOME_PAGE_FINISHED_POOL_LIST_TITLE: "Finished fundings",
+    HOME_PAGE_PENDING_POOL_LIST_TITLE: "Not activated fundings",
 
     USERS_LIST_PAGE_TITLE: 'Registered users',
     USER_PAGE_TITLE: 'User {address}',

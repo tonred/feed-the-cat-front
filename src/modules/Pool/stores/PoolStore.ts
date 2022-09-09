@@ -55,7 +55,6 @@ export class PoolStore {
                 top2: fullInfo.top2,
                 top3: fullInfo.top3,
             }
-            console.log(poolData)
             this.setData({contract: contract, data: poolData})
         } catch (e) {
             error(e)
@@ -123,22 +122,4 @@ export class PoolStore {
     public get collection(): string | undefined {
         return this.data.data?.collection;
     }
-
-    //
-    // public get active(): PoolDataSimple[] | undefined {
-    //     return this.data.pools?.filter((p) => p.state == PoolState.ACTIVE);
-    // }
-    //
-    // public get finished(): PoolDataSimple[] | undefined {
-    //     return this.data.pools?.filter((p) => p.state == PoolState.FINISHED);
-    // }
-    //
-    // public get pending(): PoolDataSimple[] | undefined {
-    //     return this.data.pools?.filter((p) => p.state == PoolState.PENDING);
-    // }
-    //
-    // public get totalCount(): number | undefined {
-    //     return 0
-    //     // return this.data.response?.totalCount
-    // }
 }

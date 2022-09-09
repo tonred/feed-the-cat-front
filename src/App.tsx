@@ -15,22 +15,10 @@ import User from "@/pages/user";
 import Pool from "@/pages/pools/item";
 import Users from "@/pages/users";
 import Pools from "@/pages/pools";
-import {NETWORK_ID, rootAddress} from "@/config";
-import {rootContract} from "@/misc/eth-contracts";
-import {usePools} from "@/hooks/usePools";
-import {usePool} from "@/hooks/usePool";
 
 
 function App() {
     const localization = React.useContext(LocalizationContext)
-    // useEffect(() => {
-    //     // poolsStore.fetch(rootAddress)
-    //     // console.log(rootContract(rootAddress, network.rpcUrl).methods.fundingsStatuses().call().then((r: any) => console.log(r)))
-    //     // console.log(rootContract(rootAddress, network.rpcUrl).getPastEvents('NewFunding', {
-    //     //     fromBlock: 0,
-    //     //     toBlock: 'latest'
-    //     // }).then((r: any) => console.log(r)))
-    // }, [])
     return (
         <IntlProvider
             key="intl"
